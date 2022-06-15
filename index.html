@@ -1,465 +1,109 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<meta name="description" content="Green Agrotrade AG">
-<link href="https://bottle20211/github.io/images/favicon/favicon.png" rel="icon">
-<title>Green Agrotrade AG</title>
-<link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Work+Sans:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
-<link rel="stylesheet" href="https://bottle20211.github.io/project/libraries.css" />
-<link rel="stylesheet" href="https://bottle20211.github.io/project/style.css" />
-https://bottle20211.github.io/
+<title>Responsive Navbar Using HTML/CSS With Toggle Javascript</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap');
+      body{
+      margin: 0;
+      font-family: 'Heebo', sans-serif;
+      }
+      div{
+      width: 100%;
+      }
+      h1{
+      margin: 0;
+      padding: 20px 40px;
+      color: black;
+      font-size: 20px;
+      }
+      nav{
+      display: flex;
+      background-color: white;
+      }
+      .fa{
+      display: none;
+      }
+      ul{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      list-style-type: none;
+      width: 100%;
+      }
+      li{
+      padding: 20px 45px;
+      font-size: 20px;
+      color:black;
+      transition: .2s;
+      cursor: pointer;
+      }
+      li:hover{
+      color: black;
+      background: white;
+      }
+      @media(min-width: 768px){
+      div:nth-child(1){
+      width: 20%;
+      }
+      div:nth-child(2){
+      width: 80%;
+      }
+      }
+      @media(max-width: 992px){
+      li{
+      padding: 20px;
+      }
+      }
+      @media(max-width: 768px){
+      nav,ul{
+      flex-wrap: wrap;
+      text-align: center;
+      }
+      li{
+      width: 100%;
+      }
+      div:nth-child(1){
+      background-color: white;
+      }
+      #mobMenu{
+      display: none;
+      transition: .2s;
+      }
+      .fa{
+      display: block;
+      font-size: 36px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 15px;
+      color: black;
+      cursor: pointer;
+      }
+      }
+    </style>
 </head>
 <body>
-<div class="wrapper">
-<!-- =========================
-Header
-=========================== -->
-<header class="header header-light">
-<nav class="navbar navbar-expand-lg border-bottom-0">
-<div class="container">
-<a class="navbar-brand" href="index.html">
-<img src="https://bottle20211/github.io/images/logo/logo.png" class="logo-dark" alt="logo">
-</a>
-<button class="navbar-toggler" type="button">
-<span class="menu-lines"><span></span></span>
-</button>
-<div class="collapse navbar-collapse" id="mainNavigation">
-<ul class="navbar-nav ml-auto">
-<li class="nav__item with-dropdown">
-<a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link active">Home</a>
-</li><!-- /.nav-item -->
-<li class="nav__item with-dropdown">
-<a href="#uberuns" class="dropdown-toggle nav__item-link">Über uns</a>
-</li><!-- /.nav-item -->
-<li class="nav__item with-dropdown mega-dropdown">
-<a href="#produkte" class="dropdown-toggle nav__item-link">Produkte</a>
-</li><!-- /.nav-item -->
-<li class="nav__item with-dropdown">
-<a href="#news" class="dropdown-toggle nav__item-link">News</a>
-</li><!-- /.nav-item -->
-<li class="nav__item with-dropdown">
-<a href="#team" class="dropdown-toggle nav__item-link">Team</a>
-</li><!-- /.nav-item -->
-<li class="nav__item with-dropdown">
-<a href="#kontakt" class="dropdown-toggle nav__item-link">Kontakt</a>
-</li><!-- /.nav-item -->
-</ul><!-- /.navbar-nav -->
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container -->
-</nav><!-- /.navabr -->
-</header><!-- /.Header -->
-<!-- ============================
-Slider
-============================== -->
-<section class="slider slider-layout1">
-<div class="slick-carousel carousel-arrows-light m-slides-0"
-data-slick='{"slidesToShow": 1, "arrows": true, "dots": true, "speed": 700,"fade": true,"cssEase": "linear"}'>
-<div class="slide-item align-v-h">
-<div class="bg-img"><img src="https://bottle20211/github.io/images/backgrounds/s3.jpg" alt="background"></div>
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
-<div class="slide-item__content">
-<h1 class="slide-item__subtitle" >Made in Switzerland</h1>
-<h2 class="slide-item__title">Schweizer Qualität für den perfekten Ertrag</h2>
-<a href="#uberuns" class="btn btn__primary">Mehr erfahren</a>
-</div><!-- /.slide-content -->
-</div><!-- /.col-xl-9 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</div><!-- /.slide-item -->
-</div><!-- /.carousel -->
-</section><!-- /.slider -->
-<!-- ==========================
-fancybox layout 2
-=========================== -->
-<section class="fancybox-layout2 pb-70" id="uberuns">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12 mb-40">
-<h2 class="heading-subtitle"> Ein Schatz der Natur</h2>
-<h3 class="heading-title">Gemeinsam im Einklang mit der Natur</h3>
-<p class="heading-desc mb-40">Wir lieben, was wir tun, und wir tun es mit Leidenschaft. Unsere Vision ist Ausdruck dessen, was wir schätzen und worauf wir hinarbeiten. Wir haben uns der Kraft von Cannabis verschrieben und glauben an das Potenzial der Cannabispflanze. In unserem Bestreben, das Leben der Menschen zu verbessern und langfristige Werte für unsere Interessengruppen zu schaffen, lassen wir uns von diesen Grundsätzen leiten:</p>
-</div><!-- /.col-lg-11 -->
-</div><!-- /.row -->
-<div class="row">
-<!-- fancybox item #1 -->
-<div class="col-sm-12 col-md-12 col-lg-4">
-<div class="fancybox-item d-flex">
-<div class="fancybox-item__heading">
-<h4 class="fancybox-item__title">Menschen &amp; Gemeinschaft</h4>
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<p class="fancybox-item__desc">Wir glauben an die Förderung der wertvollsten globalen Cannabis-Community, die aus leidenschaftlichen und mutigen Menschen besteht.</p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-<!-- fancybox item #2 -->
-<div class="col-sm-12 col-md-12 col-lg-4">
-<div class="fancybox-item d-flex">
-<div class="fancybox-item__heading">
-<h4 class="fancybox-item__title">Qualitäts-<br>produkte</h4>
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<p class="fancybox-item__desc">Wir glauben an die Entwicklung innovativer und sinnvoller Produkte, die die Bedürfnisse unserer Konsumenten erfüllen und ihre Erwartungen übertreffen.</p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-<!-- fancybox item #3 -->
-<div class="col-sm-12 col-md-12 col-lg-4">
-<div class="fancybox-item d-flex">
-<div class="fancybox-item__heading">
-<h4 class="fancybox-item__title">Integrität und Führungsqualitäten </h4>
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<p class="fancybox-item__desc">Wir sind stolz darauf, die Branche verantwortungs-<br>bewusst voranzubringen.</p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /. fancybox layout 2 -->
-<section class="team-layout1 team-boxed pb-70 bg-gray" id="produkte">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12">
-<div class="heading mb-50">
-<h2 class="heading-subtitle">Schweizer Qualität ohne Kompromisse</h2>
-<h3 class="heading-title"> Unsere Produkte</h3>
-<p class="heading-desc mb-40">Alle unsere CBD Blüten werden unter höchsten Qualitätsstandards in der Schweiz produziert und hergestellt. Unser Qualitätsversprechen spiegelt sich in dem intensiven Geschmack und dem hohen CBD-Gehalt der Blüten wider. Der THC-Gehalt liegt bei allen Blüten unter 1 %.</p>
-</div><!-- /.heading -->
-</div><!-- /.col-lg-10 -->
-</div><!-- /.row -->
-<div class="row">
-<!-- Member #1 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/bluete.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">CBD Blüten</h5>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-<!-- Member #2 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/ol.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">CBD Öle</h5>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-<!-- Member #3 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/isolate.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">CBD Isolate</h5>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /.team1 -->
-<!-- ==========================
-fancybox layout 1
-=========================== -->
-<section class="fancybox-layout1 pt-90 pb-90">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-11 mb-40">
-<h2 class="heading-subtitle">Smart und effizient</h2>
-<h3 class="heading-title">Vom Steckling bis zum CBD Extrakt</h3>
-</div><!-- /.col-lg-11 -->
-</div><!-- /.row -->
-<div class="row">
-<!-- fancybox item #1 -->
-<div class="col-sm-6 col-md-6 col-lg-4">
-<div class="fancybox-item">
-<div class="fancybox-item__icon">
-<img src="https://bottle20211/github.io/images/icons/switzerland.png" alt="icon">
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<h4 class="fancybox-item__title">Schweizer Qualität</h4>
-<p class="fancybox-item__desc">Alle unsere Produktionsschritte vom Anbau über die Ernte bis hin zur CBD Herstellung und Abfüllung findet in der Schweiz statt. </p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-<!-- fancybox item #2 -->
-<div class="col-sm-6 col-md-6 col-lg-4">
-<div class="fancybox-item">
-<div class="fancybox-item__icon">
-<img src="https://bottle20211/github.io/images/icons/innovation.png" alt="icon">
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<h4 class="fancybox-item__title">Innovative Herstellung</h4>
-<p class="fancybox-item__desc">Wir haben ein innovatives Verfahren entwickeln, das uns erlaubt, CBD Produkte von höchster Reinheit zu produzieren.</p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-<!-- fancybox item #3 -->
-<div class="col-sm-6 col-md-6 col-lg-4">
-<div class="fancybox-item">
-<div class="fancybox-item__icon">
-<img src="https://bottle20211/github.io/images/icons/group.png" alt="icon">
-</div><!-- /.fancybox-icon -->
-<div class="fancybox-item__content">
-<h4 class="fancybox-item__title">Erfahrenes Team</h4>
-<p class="fancybox-item__desc">Neben unserer umfassenden Expertise haben wir dazu fundiertes Netzwerk an Partnern, das uns bei der CBD Produktion und Herstellung unterstützt. </p>
-</div><!-- /.fancybox-content -->
-</div><!-- /.fancybox-item -->
-</div><!-- /.col-lg-4 -->
-<!-- fancybox item #4 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /. fancybox layout 1 -->
-<section class="clients pt-50">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12">
-<div class="slick-carousel"
-data-slick='{"slidesToShow": 6, "arrows": false, "dots": false, "autoplay": true,"autoplaySpeed": 2000, "infinite": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 4}}, {"breakpoint": 767, "settings": {"slidesToShow": 3}}, {"breakpoint": 480, "settings": {"slidesToShow": 2}}]}'>
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/canna.jpg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/gruen.jpg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/ighanf.png" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/rock.jpeg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/green.jpeg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/cannav.jpeg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/canna.jpg" alt="client"></a>
-</div><!-- /.client -->
-<div class="client">
-<a href="#"><img src="https://bottle20211/github.io/images/clients/gruen.jpg" alt="client"></a>
-</div><!-- /.client -->
-</div><!-- /.carousel -->
-</div><!-- /.col-lg-12 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /.clients -->
-<!-- ================================
-Banner 1
-=============================== -->
-<section class="banner-layout1 pb-0 bg-parallax" id="news">
-<div class="bg-img"><img src="https://bottle20211/github.io/images/backgrounds/budbird.jpeg" alt="img"></div>
-<div class="container-fluid col-padding-0">
-<div class="row">
-<div class="col-sm-12 col-md-8 offset-md-4 col-lg-6 offset-lg-6">
-<div class="banner-panel" data-aos="fade-left">
-<div class="heading mb-40">
-<h2 class="heading-subtitle">News</h2>
-<h3 class="heading-title">budbird.ch</h3>
-<p class="heading-desc">Als erstes Unternehmen in der Schweiz hat Green Agrotrade AG ein innovatives Modell für nachhaltige Cannabiswirtschaft
-in der Schweiz entwickelt. Damit können jetzt auch Privatanleger in den boomenden Cannabismarkt investieren und von den hohen Renditechancen eines Cannabisinvestments profitieren. budbird bietet Ihren Kunden die Möglichkeit, Ihr Vermögen ganz natürlich zu vermehren. Die budbird Kunden investieren nicht in einen Fonds oder ein abstraktes Finanzprodukt, sondern direkt in Ihren eigenen Cannabis.. Durch den Kauf werden die Kunden zum Eigentümer einer bestimmten Anzahl von Cannabispflanzen.</p>
+<nav>
+<div>
+<h1>W3hubs</h1>
+<i class="fa fa-bars" style="font-size:36px" onclick="if (!window.__cfRLUnblockHandlers) return false; myFunction()" data-cf-modified-670d44414f4988f988d157a5-=""></i>
 </div>
-<a href="https://budbird.ch" target="_blank" class="btn btn__primary" >Mehr erfahren</a>
-</div><!-- /.banner-panel -->
-</div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /.banner 1 -->
-<!-- ===========================
-Counters
-============================= -->
-<br>
-<br>
-<section class="team-layout1 pb-70" id="team">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-10">
-<div class="heading mb-50">
-<h2 class="heading-subtitle">Zurvelässig &amp; Kompetent</h2>
-<h3 class="heading-title"> Wir lieben, was wir tun</h3>
-</div><!-- /.heading -->
-</div><!-- /.col-lg-10 -->
-</div><!-- /.row -->
-<div class="row">
-<!-- Member #1 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/weber.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">Dr. Horst Weber</h5>
-<p class="member__desc">VRP/Founder</p>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-<!-- Member #2 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/Thomas-Stauber-682x1024.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">Thomas Stauber</h5>
-<p class="member__desc">Plantagenmanger / Landwirtschaftlicher Betrieb</p>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-<!-- Member #3 -->
-<div class="col-sm-12 col-md-4 col-lg-4">
-<div class="member">
-<div class="member__img">
-<img src="https://bottle20211/github.io/images/team/lorenz.jpg" alt="member img">
-</div><!-- /.member-img -->
-<div class="member__info">
-<h5 class="member__name">Lorenz Haag</h5>
-<p class="member__desc">Salesmanager</p>
-</div><!-- /.member-info -->
-</div><!-- /.member -->
-</div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /.team1 -->
-<section class="contact-layout1 pt-50" id="kontakt">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-6">
-<h2 class="heading-subtitle">Bleiben Sie mit uns in Verbindung</h2>
-<h3 class="heading-title">Für Fragen oder Hilfe stehen wir Ihnen gerne zur Verfügung!</h3>
-<p class="heading-desc mb-30">Kontaktiere uns via Kontaktformular, Telefon oder E-Mail. <br>Gerne sind wir für Sie da.</p>
-</div><!-- /.col-lg-6 -->
-<div class="col-sm-12 col-md-12 col-lg-6">
-<form method="post" action="https://bottle20211/github.io/php/contact.php" id="contactForm">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name"
-required>
-<span class="focus-border"></span>
+<div id="mobMenu">
+<ul>
+<li><a href="#"></a>Home</li>
+<li><a href="#"></a>About</li>
+<li><a href="#"></a>Service</li>
+<li><a href="#"></a>Contact us</li>
+</ul>
 </div>
-<div class="form-group">
-<input type="email" class="form-control" placeholder="Email" id="contact-email" name="contact-email"
-required>
-<span class="focus-border"></span>
-</div>
-<div class="form-group">
-<textarea class="form-control" placeholder="Nachricht" id="contact-messgae" name="contact-messgae"
-required></textarea>
-<span class="focus-border"></span>
-</div>
-<button type="submit" class="btn btn__primary">Send Message</button>
-<div class="contact-result"></div>
-</form>
-</div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</section><!-- /.Contact layout 1 -->
-<!-- ========================
-Footer
-========================== -->
-<footer class="footer">
-<div class="container">
-<div class="row footer-newsletter">
-<div class="col-sm-12 col-md-12 col-lg-7">
-<h5 class="footer-newsletter__title">
-<span>Immer auf dem neuesten Stand mit dem <br>Green Agrotrade Newsletter </span>
-</h5>
-</div><!-- /.col-lg-5 -->
-<div class="col-sm-12 col-md-12 col-lg-5">
-<form class="footer-newsletter__form d-flex">
-<input type="text" class="form-control" placeholder="E-Mail">
-<button type="submit" class="submit-btn"><i class="icon-arrow-right"></i></button>
-</form>
-</div><!-- /.col-lg-5 -->
-</div><!-- /.row -->
-<div class="row">
-<div class="col-sm-6 col-md-3 col-lg-3 footer-widget">
-<h6 class="footer-widget__title">Kontakt</h6>
-<div class="footer-widget__content">
-<p class="mb-0">E: info@green-agrotrade.com</p>
-<p class="mb-0">T: +41 44 512 39 50</p>
-</div><!-- /.footer-widget__content -->
-</div><!-- /.col-lg-3 -->
-<div class="col-sm-6 col-md-3 col-lg-3 footer-widget">
-<h6 class="footer-widget__title">Adresse</h6>
-<div class="footer-widget__content">
-<p class="mb-0">Adresse: Dufourstrasse 1<br> CH – 8008 Zürich</p>
-</div><!-- /.footer-widget__content -->
-</div><!-- /.col-lg-3 -->
-<div class="col-sm-6 col-md-3 col-lg-3 footer-widget">
-<h6 class="footer-widget__title">Registriert</h6>
-<div class="footer-widget__content">
-<p class="mb-0">UID: CHE – 101.456.194 <br>CH-ID CH – 020-3923504-4.</p>
-</div><!-- /.footer-widget__content -->
-</div><!-- /.col-lg-3 -->
-<div class="col-sm-6 col-md-3 col-lg-3 footer-widget">
-<h6 class="footer-widget__title">Social</h6>
-<div class="footer-widget__content">
-<ul class="social-icons list-unstyled">
-<li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="#" title="instagram"><i class="fab fa-instagram"></i></a></li>
-<li><a href="#" title="twitter"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#" title="dribbble"><i class="fab fa-linkedin"></i></a></li>
-</ul><!-- /.social-icons -->
-</div>
-</div><!-- /.col-lg-3 -->
-</div><!-- /.row -->
-<div class="row">
-<div class="col-sm-12 col-md-12 col-lg-12 text-center">
-<div class="footer-copyright mt-50">
-<span class="mb-0">&copy; 2022 LGreen Agrotrade AG. All Rights Reserved
-</span>
-</div><!-- /.Footer-copyright -->
-</div><!-- /.col-lg-9 -->
-</div><!-- /.row -->
-</div><!-- /.container -->
-</footer><!-- /.Footer -->
-<button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
-<div class="search-popup">
-<i class="search-popup__close">&times;</i>
-<form class="search-popup__form">
-<input type="text" class="search-popup__form__input" placeholder="Type Words Then Enter">
-<button class="search-popup__btn"><i class="icon-search"></i></button>
-</form>
-</div><!-- /. search-popup -->
-<div class="hamburger-menu">
-<i class="hamburger-menu__close">&times;</i>
-<div class="hamburger-menu__content">
-<h3 class="hamburger-menu__title">Ready to start your next project?</h3>
-<a class="hamburger-menu__email mb-50" href="mailto:Lambanella@7oroof.com">Lambanella@7oroof.com</a>
-<ul class="instagram-images list-unstyled d-flex flex-wrap mb-60">
-<li><img src="https://bottle20211/github.io/images/instagram/1.jpg" alt="instagram"></li>
-<li><img src="https://bottle20211/github.io/images/instagram/2.jpg" alt="instagram"></li>
-<li><img src="https://bottle20211/github.io/images/instagram/3.jpg" alt="instagram"></li>
-<li><img src="https://bottle20211/github.io/images/instagram/4.jpg" alt="instagram"></li>
-<li><img src="https://bottle20211/github.io/images/instagram/5.jpg" alt="instagram"></li>
-<li><img src="https://bottle20211/github.io/images/instagram/6.jpg" alt="instagram"></li>
-</ul><!-- /.instagram-images -->
-<p class="color-white font-weight-bold">Follow Us</p>
-<ul class="social-icons list-unstyled mb-0">
-<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-</ul><!-- /.social-icons -->
-</div><!-- /.hamburger-menu__content -->
-</div><!-- /.hamburger-menu -->
-</div><!-- /.wrapper -->
-<script src="https://bottle20211.github.io/project/js/jquery-3.5.1.min.js"></script>
-<script src="https://bottle20211.github.io/js/project/plugins.js"></script>
-<script src="https://bottle20211.github.io/project/js/main.js"></script>
+</nav>
+<script src="https://bottle20211.github.io/project/new.js"></script>
 </body>
 </html>
